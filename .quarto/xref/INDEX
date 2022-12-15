@@ -1,0 +1,23 @@
+{
+  "posts/post-with-code/index.qmd": {
+    "index.html": "aa21f68b"
+  },
+  "posts/welcome/index.qmd": {
+    "index.html": "b213e455"
+  },
+  "index.qmd": {
+    "index.html": "953a9079"
+  },
+  "about.qmd": {
+    "about.html": "ec8b43d8"
+  },
+  "posts/Untitled-1.ipynb": {
+    "Untitled-1.html": "46308f52"
+  },
+  "posts/math_resources.ipynb": {
+    "math_resources.html": "14e10d5d"
+  },
+  "posts/how_to_read_an_academic_paper.ipynb": {
+    "how_to_read_an_academic_paper.html": "9a71ea1f"
+  }
+}
