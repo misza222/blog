@@ -1,19 +1,5 @@
 [
   {
-    "objectID": "posts/post-with-code/index.html",
-    "href": "posts/post-with-code/index.html",
-    "title": "Post With Code",
-    "section": "",
-    "text": "This is a post with executable code."
-  },
-  {
-    "objectID": "posts/welcome/index.html",
-    "href": "posts/welcome/index.html",
-    "title": "Welcome To My Blog",
-    "section": "",
-    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
-  },
-  {
     "objectID": "posts/math_resources.html",
     "href": "posts/math_resources.html",
     "title": "Math resources",
@@ -28,20 +14,6 @@
     "text": "Andrew Ng gave an career advice lecture at Stanford in 2019 where he also mentioned how to read academic papers.\nRead it taking multiple passes through the paper:\n\nTitle + Abstract + Figures\nIntro + Conclusions + Figures + Skim rest\nRead text but skip math\nRead all of it but skip what doesn’t make sense\n\nwhich boils down to:\n\nGo from efficient and high information content first and dig into the harder bits gradually\nSome of the questions to keep in mind during the process (and to decide whether to go to the next step):\n\nWhat did authors try to acomplish?\nWhat are the key elements of the approach?\nWhat can you use yourself?\nWhat other references do you want to follow?\n\nIt is worth watching, as it also sumarizes the process of creating and reviewing the paper to give rationale for that process."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "blog",
-    "section": "",
-    "text": "Math resources\n\n\nto understand Deep Learning and be reasonably comfortable with papers.\n\n\n\n\n\n\n\n \n\n\n\n\n\n\nHow to read papers?\n\n\nadvice from Andrew Ng\n\n\n\n\n\n\n\n \n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this blog"
-  },
-  {
     "objectID": "example_posts/post-with-code/index.html",
     "href": "example_posts/post-with-code/index.html",
     "title": "Post With Code",
@@ -54,5 +26,19 @@
     "title": "Welcome To My Blog",
     "section": "",
     "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Notes on the progress",
+    "section": "",
+    "text": "Math resources\n\n\nto understand Deep Learning and be reasonably comfortable with papers.\n\n\n\n\n\n\n\n \n\n\n\n\n\n\nHow to read papers?\n\n\nadvice from Andrew Ng\n\n\n\n\n\n\n\n \n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "TBD"
   }
 ]
