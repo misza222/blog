@@ -15,5 +15,5 @@ website:
         href: https://linkedin.com/in/misza/
 format:
   html:
-    theme: united
+    theme: litera
     css: styles.css
