@@ -19,5 +19,11 @@
   },
   "posts/how_to_read_an_academic_paper.ipynb": {
     "how_to_read_an_academic_paper.html": "9a71ea1f"
+  },
+  "example_posts/post-with-code/index.qmd": {
+    "index.html": "2566ce31"
+  },
+  "example_posts/welcome/index.qmd": {
+    "index.html": "6d8a2820"
   }
 }
