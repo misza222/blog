@@ -25,5 +25,11 @@
   },
   "example_posts/welcome/index.qmd": {
     "index.html": "6d8a2820"
+  },
+  "posts/new_programming_paradigm.ipynb": {
+    "new_programming_paradigm.html": "de7d6706"
+  },
+  "posts/docker_notes.ipynb": {
+    "docker_notes.html": "b9eced22"
   }
 }

@@ -2,6 +2,8 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/new_programming_paradigm.html",
+      "/posts/docker_notes.html",
       "/posts/math_resources.html",
       "/posts/how_to_read_an_academic_paper.html"
     ]

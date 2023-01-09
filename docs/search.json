@@ -1,5 +1,19 @@
 [
   {
+    "objectID": "posts/new_programming_paradigm.html",
+    "href": "posts/new_programming_paradigm.html",
+    "title": "Michał Pawłowski",
+    "section": "",
+    "text": "Software 2.0 as a new programming paradigm.\n\n- for certain class of problems\n- compexity\n- bias in data\n\nsee https://www.youtube.com/watch?v=orY5aLMDU-I"
+  },
+  {
+    "objectID": "posts/docker_notes.html",
+    "href": "posts/docker_notes.html",
+    "title": "Docker",
+    "section": "",
+    "text": "My notes on learning docker and terminology\n\nBasic Terminology:\n\nimage - text representation of a software you want to “dockerize” so small and light - it is usually in a form of version controlled repository where you have:\n\nDockerfile (recipie of how to build and run the image including references to dependencies),\ncode of your app if necessary\n\nyou will find example of such an image here\ncontainer - runnable instance of an image - with all the dependencies pulled in, so can be heavy\nvolume - you can’t store any data on a container, as it is not mutable so for persisting data (i.e. logs, db files, model files) use volumes"
+  },
+  {
     "objectID": "posts/math_resources.html",
     "href": "posts/math_resources.html",
     "title": "Math resources",
@@ -32,7 +46,7 @@
     "href": "index.html",
     "title": "Blog",
     "section": "",
-    "text": "Math resources\n\n\nto understand Deep Learning and be reasonably comfortable with papers.\n\n\n\n\n\n\n\n \n\n\n\n\n\n\nHow to read papers?\n\n\nadvice from Andrew Ng\n\n\n\n\n\n\n\n \n\n\n\n\nNo matching items"
+    "text": "Docker\n\n\nfor ML practicioners\n\n\n\n\n\n\n\n \n\n\n\n\n\n\nMath resources\n\n\nto understand Deep Learning and be reasonably comfortable with papers.\n\n\n\n\n\n\n\n \n\n\n\n\n\n\nHow to read papers?\n\n\nadvice from Andrew Ng\n\n\n\n\n\n\n\n \n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
