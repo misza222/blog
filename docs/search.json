@@ -1,17 +1,10 @@
 [
   {
-    "objectID": "posts/new_programming_paradigm.html",
-    "href": "posts/new_programming_paradigm.html",
-    "title": "Michał Pawłowski",
-    "section": "",
-    "text": "Software 2.0 as a new programming paradigm.\n\n- for certain class of problems\n- compexity\n- bias in data\n\nsee https://www.youtube.com/watch?v=orY5aLMDU-I"
-  },
-  {
     "objectID": "posts/docker_notes.html",
     "href": "posts/docker_notes.html",
     "title": "Docker",
     "section": "",
-    "text": "My notes on learning docker and terminology\n\nBasic Terminology:\n\nimage - text representation of a software you want to “dockerize” so small and light - it is usually in a form of version controlled repository where you have:\n\nDockerfile (recipie of how to build and run the image including references to dependencies),\ncode of your app if necessary\n\nyou will find example of such an image here\ncontainer - runnable instance of an image - with all the dependencies pulled in, so can be heavy\nvolume - you can’t store any data on a container, as it is not mutable so for persisting data (i.e. logs, db files, model files) use volumes"
+    "text": "WIP: My notes on learning docker and terminology\n\nBasic Terminology:\n\nimage - text representation of a software you want to “dockerize” so small and light - it is usually in a form of version controlled repository where you have:\n\nDockerfile (recipie of how to build and run the image including references to dependencies),\ncode of your app if necessary\n\nyou will find example of such an image here\ncontainer - runnable instance of an image - with all the dependencies pulled in, so can be heavy\nvolume - you can’t store any data on a container, as it is not mutable so for persisting data (i.e. logs, db files, model files) use volumes"
   },
   {
     "objectID": "posts/math_resources.html",
@@ -19,6 +12,13 @@
     "title": "Math resources",
     "section": "",
     "text": "My Uni days are long gone, I was reasonably good at math, but over the years of not using it, I almost feel like the knowledge was never there.\nHere is my journey through the process of remembering some math that I need to feel more comfortable with for the basics of deep learning and to be able to digest papers in the broad area of deep learning research.\nAdvice to my former self: First read some papers, struggle through them, let the frustration build up so you have a motivation to learn + you will also build an intuition of what tools you may actually need!\nAs for the resouces, I started with Deep Learninig book few years ago, but got discouraged by the theory and I didn’t have enough practice to know that it will be useful some day.\nRecently I found out that there is a growing comunity of people around that book led by Sanyam Buthani. Apart from the community and help + motivation to learn that comes with it, there are number of resources for self study, such as notebooks with all the concepts translated into code, which makes it so much more practical.\nStaying around the same book, there are great lectures going through each chapter of that book.\nIf you want to learn more about torch.autograd, frameworks that do automatic differentiation in general and understand calculus that is the engine of deep learning machine there is an excelent The Matrix Calculus You Need For Deep Learning.\nAnother interesting resources are Mathematics for Machine Learning and short lectures covering pretty much all you need for the topic in a very accessible, visual and short form.\nLast but not least, Andrew Ng’s advice on how to read a paper which I also sumarize here!\nAll these resources are freely available online."
+  },
+  {
+    "objectID": "posts/optuna_notes.html",
+    "href": "posts/optuna_notes.html",
+    "title": "Optuna",
+    "section": "",
+    "text": "While doing HF RL course I bumped into Optuna.\nSome vocab to get started: - objective(trial) function - function to optimize - trial - a single test, also an object passed to the objective function - study - a set of trial at the end of which you get a suggestion of parameters to use - parameter - parameter to optimize - setting initial values for parameters to optimize: * optuna.trial.Trial.suggest_categeorical(‘name’, [‘list’]) * optuna.trial.Trial.suggest_int(‘name’, min, max) * optuna.trial.Trial.suggest_float(‘name’, min, max)\nHere is a quick summary of how to use it:\n\nimport optuna\noptuna.logging.set_verbosity(optuna.logging.WARNING) # to supress unnecessary output\n\n# with 100 trials find a minimum for a function (x-10)**2\ndef objective(trial):\n    x = trial.suggest_float(\"x\", -100, 100)\n    return (x - 10)**2\n\nstudy = optuna.create_study()\nstudy.optimize(objective, n_trials=100)\n\nstudy.best_params['x'] #pretty close\n\n10.069140289320362\n\n\n\n# however it won't do magic - here if you give it just 10 trial, \n# it will usually miss quite substantially\n\n# however with 10 trials...\ndef objective(trial):\n    x = trial.suggest_float(\"x\", -100, 100)\n    return (x - 10)**2\n\nstudy = optuna.create_study()\nstudy.optimize(objective, n_trials=10)\n\nstudy.best_params['x'] # ... it is usually not so good\n\n28.394424972253262\n\n\nhow optuna works internally is quite simple but ingenious: each call to trial.suggest_*() function already suggests a python object, so you can use it in your code straight away:\n\nstudy = optuna.create_study()\ndef objective(trial):\n    i = trial.suggest_int('x', 0, 100, step=10)\n    print(f\"next {i=}\")\n    return i\n\nstudy.optimize(objective, n_trials=10)\nstudy.best_params['x']\n\nnext i=0\nnext i=20\nnext i=40\nnext i=10\nnext i=90\nnext i=40\nnext i=80\nnext i=50\nnext i=90\nnext i=0\n\n\n0\n\n\nalso it is quite interesting how the numbers are drawn from the space - this is all random and duplicates are possible. Especially if we have very limited space of available unique values as in here. This is not an implementation bug - here we deal with a single variable, but if we have multiple ones, it quite makes sense to try simillar values if we variate other parameters at the same time.\n\n\n\n\n\n# however with 10 trials...\ndef objective(trial):\n    x = trial.suggest_float(\"x\", -100, 100)\n    return (x - 10)**2\n\nstudy = optuna.create_study()\nstudy.optimize(objective, n_trials=10)\n\nstudy.best_params['x'] # ... it is usually not so good\n\n# but training for another 10 iterations does the trick\nstudy.optimize(objective, n_trials=10)\n\nstudy.best_params['x'] # ok, now it is better :)\n\n10.802422942208281\n\n\n\n\n\nOr just run hiperparameter searches when your colab disconnects\nOptuna allows for distrubuted trials\n\n#straight from optuna docs @ https://optuna.readthedocs.io/en/stable/tutorial/10_key_features/004_distributed.html\ndef objective(trial):\n    x = trial.suggest_float(\"x\", -10, 10)\n    return (x - 2) ** 2\n\n\nif __name__ == \"__main__\":\n    study = optuna.load_study(\n        study_name=\"distributed-example\", storage=\"mysql://root@localhost/example\"\n    )\n    study.optimize(objective, n_trials=100)\n\n\n\n\nTBD"
   },
   {
     "objectID": "posts/how_to_read_an_academic_paper.html",
@@ -46,7 +46,7 @@
     "href": "index.html",
     "title": "Blog",
     "section": "",
-    "text": "Docker\n\n\nfor ML practicioners\n\n\n\n\n\n\n\n \n\n\n\n\n\n\nMath resources\n\n\nto understand Deep Learning and be reasonably comfortable with papers.\n\n\n\n\n\n\n\n \n\n\n\n\n\n\nHow to read papers?\n\n\nadvice from Andrew Ng\n\n\n\n\n\n\n\n \n\n\n\n\nNo matching items"
+    "text": "Docker\n\n\nfor ML practicioners\n\n\n\n\n\n\n\n \n\n\n\n\n\n\nMath resources\n\n\nto understand Deep Learning and be reasonably comfortable with papers.\n\n\n\n\n\n\n\n \n\n\n\n\n\n\nOptuna\n\n\nis hot on Kaggle\n\n\n\n\n\n\n\n \n\n\n\n\n\n\nHow to read papers?\n\n\nadvice from Andrew Ng\n\n\n\n\n\n\n\n \n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
@@ -54,5 +54,12 @@
     "title": "About",
     "section": "",
     "text": "TBD"
+  },
+  {
+    "objectID": "posts_staging/new_programming_paradigm.html",
+    "href": "posts_staging/new_programming_paradigm.html",
+    "title": "Michał Pawłowski",
+    "section": "",
+    "text": "Software 2.0 as a new programming paradigm.\n\n- for certain class of problems\n- compexity\n- bias in data\n\nsee https://www.youtube.com/watch?v=orY5aLMDU-I"
   }
 ]

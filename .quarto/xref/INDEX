@@ -31,5 +31,11 @@
   },
   "posts/docker_notes.ipynb": {
     "docker_notes.html": "b9eced22"
+  },
+  "posts/optuna_notes.ipynb": {
+    "optuna_notes.html": "339624e6"
+  },
+  "posts_staging/new_programming_paradigm.ipynb": {
+    "new_programming_paradigm.html": "c6b600ce"
   }
 }
