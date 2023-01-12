@@ -37,5 +37,11 @@
   },
   "posts_staging/new_programming_paradigm.ipynb": {
     "new_programming_paradigm.html": "c6b600ce"
+  },
+  "posts/deep_q_learning.ipynb": {
+    "deep_q_learning.html": "37d01fc7"
+  },
+  "posts/f_cross_entropy.ipynb": {
+    "f_cross_entropy.html": "dc69c802"
   }
 }

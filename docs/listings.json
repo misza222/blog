@@ -2,10 +2,10 @@
   {
     "listing": "/index.html",
     "items": [
-      "/posts/docker_notes.html",
-      "/posts/math_resources.html",
+      "/posts/f_cross_entropy.html",
       "/posts/optuna_notes.html",
-      "/posts/how_to_read_an_academic_paper.html"
+      "/posts/how_to_read_an_academic_paper.html",
+      "/posts/math_resources.html"
     ]
   }
 ]

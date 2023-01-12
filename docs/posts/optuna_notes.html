@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2022-12-22">
 
 <title>Michał Pawłowski - Optuna</title>
 <style>
@@ -180,6 +181,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <div class="quarto-title-meta">
 
       
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">December 22, 2022</p>
+      </div>
+    </div>
     
       
     </div>
@@ -197,7 +204,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <section id="optuna---the-choice-of-kagglers" class="level1">
 <h1>Optuna - the choice of Kagglers</h1>
-<p>While doing <a href="https://huggingface.co/deep-rl-course/">HF RL course</a> I bumped into Optuna.</p>
+<p>While doing <a href="https://huggingface.co/deep-rl-course/">HF RL course</a> I bumped into Optuna, then I’ve noticed that ppl do it on Kaggle a lot - this is like a badge of honor for a package if it is being used on a top ML competition site, <em>ergo</em> it is worth learning!</p>
 <p>Some vocab to get started: - <code>objective(trial)</code> function - function to optimize - trial - a single test, also an object passed to the objective function - study - a set of trial at the end of which you get a suggestion of parameters to use - parameter - parameter to optimize - setting initial values for parameters to optimize: * optuna.trial.Trial.suggest_categeorical(‘name’, [‘list’]) * optuna.trial.Trial.suggest_int(‘name’, min, max) * optuna.trial.Trial.suggest_float(‘name’, min, max)</p>
 <p>Here is a quick summary of how to use it:</p>
 <div class="cell" data-execution_count="88">
