@@ -30,7 +30,7 @@
   {
     "objectID": "posts/f_cross_entropy/f_cross_entropy.html",
     "href": "posts/f_cross_entropy/f_cross_entropy.html",
-    "title": "Why use F.cross_entropy",
+    "title": "Why use F.cross_entropy?",
     "section": "",
     "text": "apart from less code of course! Another reason: it is safer!\nI like to have more controll over what and how I am doing things, instead of using black boxes. But be warned that you can get burned when computing negative log likelihood yourself (the same is tru for softmaxes for example).\nsee this example:\n\nimport torch\n\nlogits = torch.tensor([-100, -5, 2, 100])\nlogits = logits.exp()\nprobs = logits / logits.sum()\nprobs, probs.sum()\n\n(tensor([0., 0., 0., nan]), tensor(nan))\n\n\nmakes sense, right? exp(100) is VERY large, so if your network misbehaves and produces extreme activations, you have a problem, but…\n\nimport torch\n\nlogits = torch.tensor([-100, -5, 2, 100])\n\n# here we deduct max value from the logits, so everyting is in (-∞, 0)\n#----------------------\nlogits -= logits.max() \n#----------------------\n\nlogits = logits.exp()\nprobs = logits / logits.sum()\nprobs, probs.sum()\n\n(tensor([0.0000e+00, 0.0000e+00, 2.7465e-43, 1.0000e+00]), tensor(1.))\n\n\nis working nicely, and that’s what F.cross_entropy does internally. Of course, you can always add that normalization to safeguard against such cases (or add batchnorm layers to your architecture if you don’t wan’t to bother about such cases at the cost of a little more complexity and state in your model).\nPlus of course I am sure there are also more good computational efficiency reasons to use torch’es built-in method do that."
   },
@@ -53,7 +53,7 @@
     "href": "index.html",
     "title": "Technical notes",
     "section": "",
-    "text": "Why use F.cross_entropy\n\n\ninstead of computing it yourself?\n\n\n\n\n\n\n\n\n\nJan 12, 2023\n\n\n\n\n\n\n  \n\n\n\n\nOptuna is hot on Kaggle\n\n\n\n\n\nHow to use it with code examples\n\n\n\n\n\n\nDec 22, 2022\n\n\n\n\n\n\n  \n\n\n\n\nHow to read papers?\n\n\nadvice from Andrew Ng\n\n\n\n\n\n\n\n\n\nDec 8, 2022\n\n\n\n\n\n\n  \n\n\n\n\nMath resources\n\n\nto understand Deep Learning and be reasonably comfortable with papers.\n\n\n\n\n\n\n\n\n\nNov 29, 2022\n\n\n\n\n\n\nNo matching items"
+    "text": "Why use F.cross_entropy?\n\n\n\n\n\n… instead of computing it yourself?\n\n\n\n\n\n\nJan 12, 2023\n\n\n\n\n\n\n  \n\n\n\n\nOptuna is hot on Kaggle\n\n\n\n\n\nHow to use it with code examples\n\n\n\n\n\n\nDec 22, 2022\n\n\n\n\n\n\n  \n\n\n\n\nHow to read papers?\n\n\n\n\n\nGreat advice from Andrew Ng\n\n\n\n\n\n\nDec 8, 2022\n\n\n\n\n\n\n  \n\n\n\n\nMath resources\n\n\n\n\n\nAll you need to within weeks understand Deep Learning and be reasonably comfortable with papers.\n\n\n\n\n\n\nNov 29, 2022\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
