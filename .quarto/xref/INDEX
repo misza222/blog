@@ -43,5 +43,11 @@
   },
   "posts/f_cross_entropy.ipynb": {
     "f_cross_entropy.html": "dc69c802"
+  },
+  "posts/f_cross_entropy/f_cross_entropy.ipynb": {
+    "f_cross_entropy.html": "c1fcc1d2"
+  },
+  "posts/dangers_of_batchnorm/index.ipynb": {
+    "index.html": "e84a107e"
   }
 }

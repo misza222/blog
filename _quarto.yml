@@ -4,6 +4,7 @@ project:
 
 website:
   title: "Michał Pawłowski"
+  twitter-card: true
   navbar:
     right:
       - about.qmd
@@ -17,3 +18,7 @@ format:
   html:
     theme: litera
     css: styles.css
+
+comments: 
+  utterances: 
+    repo:  misza222/misza222.github.com
