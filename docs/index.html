@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Michał Pawłowski - Blog</title>
+<title>Michał Pawłowski - Technical notes</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -70,9 +70,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-subtitle','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-date','listing-title','listing-author','listing-subtitle','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-description","listing-categories"],
+      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -93,7 +93,7 @@ ul.task-list li input[type="checkbox"] {
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="styles.css">
-<meta name="twitter:title" content="Michał Pawłowski - Blog">
+<meta name="twitter:title" content="Michał Pawłowski - Technical notes">
 <meta name="twitter:card" content="summary">
 </head>
 
@@ -115,7 +115,7 @@ ul.task-list li input[type="checkbox"] {
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
     <a class="nav-link" href="./about.html">
- <span class="menu-text">About</span></a>
+ <span class="menu-text">About me</span></a>
   </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/misza222"><i class="bi bi-github" role="img">
@@ -142,7 +142,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-page-left">
-      <h1 class="title">Blog</h1>
+      <h1 class="title">Technical notes</h1>
                       </div>
   </div>
     
@@ -160,7 +160,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(4)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(5)</span></div></div></div>
 <!-- main -->
 <main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
@@ -173,7 +173,34 @@ ul.task-list li input[type="checkbox"] {
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-date-sort="1673478000000" data-listing-file-modified-sort="1673554943339" data-listing-reading-time-sort="0.715">
+<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1673096943896" data-listing-reading-time-sort="0">
+<div class="thumbnail">
+<a href="./posts/new_programming_paradigm.html">
+<div class="thumbnail-image">
+
+</div>
+</a><p><a href="./posts/new_programming_paradigm.html"></a></p>
+</div>
+<div class="body">
+<a href="./posts/new_programming_paradigm.html">
+<h3 class="no-anchor listing-title">
+</h3>
+<div class="listing-subtitle">
+
+</div>
+<div class="listing-description">
+
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/new_programming_paradigm.html"> </a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-listing-date-sort="1673478000000" data-listing-file-modified-sort="1673618990879" data-listing-reading-time-sort="0.715">
+<div class="thumbnail">
+<p><a href="./posts/f_cross_entropy/f_cross_entropy.html"> <img src="./posts/f_cross_entropy/1163388725_water_trickling_down_the_mountain_photorealistic_4k.png" class="thumnail-image"> </a></p>
+</div>
 <div class="body">
 <a href="./posts/f_cross_entropy/f_cross_entropy.html">
 <h3 class="no-anchor listing-title">
@@ -195,9 +222,12 @@ Jan 12, 2023
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-listing-date-sort="1671663600000" data-listing-file-modified-sort="1673615118859" data-listing-reading-time-sort="1.535">
+<div class="quarto-post image-right" data-index="2" data-listing-date-sort="1671663600000" data-listing-file-modified-sort="1673618513796" data-listing-reading-time-sort="1.535">
+<div class="thumbnail">
+<p><a href="./posts/optuna_notes/index.html"> <img src="./posts/optuna_notes/optimization.jpeg" class="thumnail-image"> </a></p>
+</div>
 <div class="body">
-<a href="./posts/optuna_notes.html">
+<a href="./posts/optuna_notes/index.html">
 <h3 class="no-anchor listing-title">
 Optuna
 </h3>
@@ -210,16 +240,19 @@ While doing HF RL course I bumped into Optuna, then I’ve…<em></em>
 </a>
 </div>
 <div class="metadata">
-<a href="./posts/optuna_notes.html">
+<a href="./posts/optuna_notes/index.html">
 <div class="listing-date">
 Dec 22, 2022
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-listing-date-sort="1670454000000" data-listing-file-modified-sort="1673537536794" data-listing-reading-time-sort="0.74">
+<div class="quarto-post image-right" data-index="3" data-listing-date-sort="1670454000000" data-listing-file-modified-sort="1673619264717" data-listing-reading-time-sort="0.74">
+<div class="thumbnail">
+<p><a href="./posts/how_to_read_papers/index.html"> <img src="./posts/how_to_read_papers/3178523366_PhD_student_at_work_in_the_library__in_a_style_of_van_gogh.png" class="thumnail-image"> </a></p>
+</div>
 <div class="body">
-<a href="./posts/how_to_read_an_academic_paper.html">
+<a href="./posts/how_to_read_papers/index.html">
 <h3 class="no-anchor listing-title">
 How to read papers?
 </h3>
@@ -232,16 +265,19 @@ Andrew Ng gave an career advice lecture at Stanford in 2019 where he also mentio
 </a>
 </div>
 <div class="metadata">
-<a href="./posts/how_to_read_an_academic_paper.html">
+<a href="./posts/how_to_read_papers/index.html">
 <div class="listing-date">
 Dec 8, 2022
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-listing-date-sort="1669676400000" data-listing-file-modified-sort="1673537661540" data-listing-reading-time-sort="1.49">
+<div class="quarto-post image-right" data-index="4" data-listing-date-sort="1669676400000" data-listing-file-modified-sort="1673619903428" data-listing-reading-time-sort="1.49">
+<div class="thumbnail">
+<p><a href="./posts/math_resources/index.html"> <img src="./posts/math_resources/a3bb5dac-dce6-4f65-81e7-cf792c209edd.jpeg" class="thumnail-image"> </a></p>
+</div>
 <div class="body">
-<a href="./posts/math_resources.html">
+<a href="./posts/math_resources/index.html">
 <h3 class="no-anchor listing-title">
 Math resources
 </h3>
@@ -254,7 +290,7 @@ My Uni days are long gone, I was reasonably good at math, but over the years of 
 </a>
 </div>
 <div class="metadata">
-<a href="./posts/math_resources.html">
+<a href="./posts/math_resources/index.html">
 <div class="listing-date">
 Nov 29, 2022
 </div>
@@ -397,6 +433,20 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       });
     }
   }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp(/^(?:http:|https:)\/\/blog\.mpawlowski\.eu\/**/);
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+    var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
 });
 </script>
 <script src="https://utteranc.es/client.js" repo="misza222/misza222.github.com" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">

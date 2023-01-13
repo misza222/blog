@@ -49,5 +49,14 @@
   },
   "posts/dangers_of_batchnorm/index.ipynb": {
     "index.html": "e84a107e"
+  },
+  "posts/optuna_notes/index.ipynb": {
+    "index.html": "0e937ab1"
+  },
+  "posts/math_resources/index.ipynb": {
+    "index.html": "b28c6012"
+  },
+  "posts/how_to_read_papers/index.ipynb": {
+    "index.html": "029a2f04"
   }
 }

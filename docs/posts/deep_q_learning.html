@@ -61,6 +61,9 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="../styles.css">
+<meta name="twitter:title" content="Michał Pawłowski - Notes on Deep Q Learning">
+<meta name="twitter:description" content="by P. Abbeel">
+<meta name="twitter:card" content="summary">
 </head>
 
 <body class="nav-fixed fullcontent">
@@ -81,7 +84,7 @@ ul.task-list li input[type="checkbox"] {
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
     <a class="nav-link" href="../about.html">
- <span class="menu-text">About</span></a>
+ <span class="menu-text">About me</span></a>
   </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/misza222"><i class="bi bi-github" role="img">
@@ -138,7 +141,7 @@ ul.task-list li input[type="checkbox"] {
 <p>General rule: Sampling as a way to esitmate true (definitive) values in the infinite world of possibilities. So we don’t get an erratic behaviour we introduce α (learning rate) to gradually update our estimates.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="deep_q_learning_files/figure-html/fd9fa666-2-image.png" class="img-fluid figure-img"></p>
+<p><img src="deep_q_learning_files/figure-html/dabe4b04-2-image.png" class="img-fluid figure-img"></p>
 <p></p><figcaption class="figure-caption">Sampling for efficiency</figcaption><p></p>
 </figure>
 </div>
@@ -148,7 +151,7 @@ ul.task-list li input[type="checkbox"] {
 <p>Still, Q function based on tables is not possible for larger enviroments, so we need to exitmate (or compress) that with something else - here NN comes in handy with it’s gradient based optimization methods. It is called Deep Q-Networks (DQN).</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="deep_q_learning_files/figure-html/fd9fa666-1-image-2.png" class="img-fluid figure-img"></p>
+<p><img src="deep_q_learning_files/figure-html/dabe4b04-1-image-2.png" class="img-fluid figure-img"></p>
 <p></p><figcaption class="figure-caption">Parametrized Q Function</figcaption><p></p>
 </figure>
 </div>
@@ -290,7 +293,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       });
     }
   }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp(/^(?:http:|https:)\/\/blog\.mpawlowski\.eu\/**/);
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+    var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
 });
+</script>
+<script src="https://utteranc.es/client.js" repo="misza222/misza222.github.com" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
 </script>
 </div> <!-- /content -->
 

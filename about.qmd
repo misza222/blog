@@ -4,15 +4,15 @@ image: ProfilePhoto.jpeg
 about:
   template: jolla
   links:
+    - icon: github
+      text: Github
+      href: https://github.com/misza222
     - icon: twitter
       text: Twitter
       href: https://twitter.com/misza222
     - icon: linkedin
       text: LinkedIn
       href: https://linkedin.com/in/misza/
-    - icon: github
-      text: Github
-      href: https://github.com/misza222
 
 ---
 
@@ -22,4 +22,4 @@ I took a sabbatical to explore machine/deep learning but I am OPEN for OFFERS th
 
 [Curriculum Vitae](CV_Michal_Pawlowski.pdf){target="_blank"}
 
-No ChatGPT content, I promise!
+All images dreamt by *Stable Diffusion*, but I promise no *ChatGPT* content!
