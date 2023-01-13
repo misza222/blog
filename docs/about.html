@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Michał Pawłowski - About</title>
+<title>Michał Pawłowski - About me</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -60,7 +60,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="styles.css">
-<meta name="twitter:title" content="Michał Pawłowski - About">
+<meta name="twitter:title" content="Michał Pawłowski - About me">
 <meta name="twitter:description" content="Husband, father, Christian, programmer, fascinated with NN.">
 <meta name="twitter:image" content="ProfilePhoto.jpeg">
 <meta name="twitter:card" content="summary_large_image">
@@ -84,7 +84,7 @@ ul.task-list li input[type="checkbox"] {
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
     <a class="nav-link active" href="./about.html" aria-current="page">
- <span class="menu-text">About</span></a>
+ <span class="menu-text">About me</span></a>
   </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/misza222"><i class="bi bi-github" role="img">
@@ -118,14 +118,14 @@ ul.task-list li input[type="checkbox"] {
   round " style="height: 15em; width: 15em;">
  <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">About</h1>
+<h1 class="title">About me</h1>
 </div>
 <div class="quarto-title-meta">
   </div>
 </header><main class="content" id="quarto-document-content">
 <p>Husband, father, Christian, programmer, fascinated with NN.</p>
 <p>I took a sabbatical to explore machine/deep learning but I am OPEN for OFFERS that will lead me into direction of greater enlightement in a field of deep models. Especially interested in do good fields: medicine, pharma, climate etc.</p>
-<p><a href="CV_Michal_Pawlowski.pdf">Curriculum Vitae</a></p>
+<p><a href="CV_Michal_Pawlowski.pdf" target="_blank">Curriculum Vitae</a></p>
 <p>No ChatGPT content, I promise!</p>
 
 
@@ -271,6 +271,20 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       });
     }
   }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp(/^(?:http:|https:)\/\/blog\.mpawlowski\.eu\/**/);
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+    var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
 });
 </script>
 <script src="https://utteranc.es/client.js" repo="misza222/misza222.github.com" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
