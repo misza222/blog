@@ -58,5 +58,11 @@
   },
   "posts/how_to_read_papers/index.ipynb": {
     "index.html": "029a2f04"
+  },
+  "posts/f_cross_entropy/index.ipynb": {
+    "index.html": "1191d013"
+  },
+  "posts/synthetic_vision_training/index.ipynb": {
+    "index.html": "3d4ab8df"
   }
 }

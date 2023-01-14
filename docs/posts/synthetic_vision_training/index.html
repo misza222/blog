@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2023-01-12">
-<meta name="description" content="… instead of computing it yourself?">
+<meta name="dcterms.date" content="2023-01-14">
+<meta name="description" content="Not SOTA performance, but quite good">
 
-<title>Michał Pawłowski - Why use F.cross_entropy?</title>
+<title>Michał Pawłowski - Training vision models on synthetic images</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,69 +22,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -126,13 +63,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 <link rel="stylesheet" href="../../styles.css">
-<meta property="og:title" content="Michał Pawłowski - Why use F.cross_entropy?">
-<meta property="og:description" content="... instead of computing it yourself?">
-<meta property="og:image" content="1163388725_water_trickling_down_the_mountain_photorealistic_4k.png">
+<meta property="og:title" content="Michał Pawłowski - Training vision models on synthetic images">
+<meta property="og:description" content="Not SOTA performance, but quite good">
+<meta property="og:image" content="front.png">
 <meta property="og:site-name" content="Michał Pawłowski">
-<meta name="twitter:title" content="Michał Pawłowski - Why use F.cross_entropy?">
-<meta name="twitter:description" content="... instead of computing it yourself?">
-<meta name="twitter:image" content="1163388725_water_trickling_down_the_mountain_photorealistic_4k.png">
+<meta name="twitter:title" content="Michał Pawłowski - Training vision models on synthetic images">
+<meta name="twitter:description" content="Not SOTA performance, but quite good">
+<meta name="twitter:image" content="front.png">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -181,13 +118,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Why use F.cross_entropy?</h1>
+      <h1 class="title">Training vision models on synthetic images</h1>
                   <div>
         <div class="description">
-          … instead of computing it yourself?
+          Not SOTA performance, but quite good
         </div>
       </div>
-                </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">paper review</div>
+                <div class="quarto-category">vision</div>
+              </div>
+                  </div>
   </div>
     
   
@@ -197,7 +138,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">January 12, 2023</p>
+        <p class="date">January 14, 2023</p>
       </div>
     </div>
     
@@ -215,42 +156,61 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
-<p>apart from less code of course! Another reason: it is safer!</p>
-<p>I like to have more controll over what and how I am doing things, instead of using black boxes. But be warned that you can get burned when computing negative log likelihood yourself (the same is tru for softmaxes for example).</p>
-<p>see this example:</p>
-<div class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>logits <span class="op">=</span> torch.tensor([<span class="op">-</span><span class="dv">100</span>, <span class="op">-</span><span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">100</span>])</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>logits <span class="op">=</span> logits.exp()</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>probs <span class="op">=</span> logits <span class="op">/</span> logits.<span class="bu">sum</span>()</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>probs, probs.<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="7">
-<pre><code>(tensor([0., 0., 0., nan]), tensor(nan))</code></pre>
-</div>
-</div>
-<p>makes sense, right? exp(100) is VERY large, so if your network misbehaves and produces extreme activations, you have a problem, but…</p>
-<div class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>logits <span class="op">=</span> torch.tensor([<span class="op">-</span><span class="dv">100</span>, <span class="op">-</span><span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">100</span>])</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># here we deduct max value from the logits, so everyting is in (-∞, 0)</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">#----------------------</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>logits <span class="op">-=</span> logits.<span class="bu">max</span>() </span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co">#----------------------</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>logits <span class="op">=</span> logits.exp()</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>probs <span class="op">=</span> logits <span class="op">/</span> logits.<span class="bu">sum</span>()</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>probs, probs.<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="8">
-<pre><code>(tensor([0.0000e+00, 0.0000e+00, 2.7465e-43, 1.0000e+00]), tensor(1.))</code></pre>
-</div>
-</div>
-<p>is working nicely, and that’s what F.cross_entropy does internally. Of course, you can always add that normalization to safeguard against such cases (or add <code>batchnorm</code> layers to your architecture if you don’t wan’t to bother about such cases at the cost of a little more complexity and state in your model).</p>
-<p>Plus of course I am sure there are also more good computational efficiency reasons to use torch’es built-in method do that.</p>
+<p><a href="https://paperswithcode.com/paper/learning-to-see-by-looking-at-noise">Link to the paper (with code)</a></p>
+<p>Thanks to <a href="https://rosanneliu.com/">Rosanne Liu</a> for presenting this paper at <a href="https://mlcollective.org/dlct/">Deep Learning: Classics and Trends</a>.</p>
+<p>Natural images, that we encounter in nature, occupy just a small space out of all possible variations of pixels. Surely training on a pure noise won’t give us anything useful. However if we construct synthetic images that are closer to the real world images, can we train on it with some positive outcomes? Intuitively the answer is yes, but then how well can we train? Unless tagged otherwise, ideas in this blog post come from the paper.</p>
+<section id="rationale-for-this-exercise" class="level3">
+<h3 class="anchored" data-anchor-id="rationale-for-this-exercise">Rationale for this exercise</h3>
+<p>Models are more and more reliant on data. CLIP need <strong>400 000 000</strong> images to be trained. What if we could build a synthetic dataset to train? Why:</p>
+<ul>
+<li>you don’t have access to data</li>
+<li>cheaper to maintain the data</li>
+<li>maybe generating a good synthetic dataset can be better than real data (no human bias for example)</li>
+</ul>
+</section>
+<section id="task" class="level3">
+<h3 class="anchored" data-anchor-id="task">Task</h3>
+<p>The training objective is classification of <a href="https://www.kaggle.com/datasets/ambityga/imagenet100">ImageNet-100</a> images.</p>
+</section>
+<section id="training-procedure" class="level3">
+<h3 class="anchored" data-anchor-id="training-procedure">Training procedure</h3>
+<p>It is done in 2 stages:</p>
+<ol type="1">
+<li>The “base” network is trained using unsupervised contrastive learning (simplifying it is done by comparing similarity of images; <a href="https://arxiv.org/abs/1807.03748v2">details</a>)</li>
+<li>Final layer (but could be layers I think) are trained briefly on actual data to create a head of the model (to me it was not clear reading the paper but see <a href="https://github.com/mbaradad/learning_with_noise/blob/main/align_uniform/linear_eval_imagenet100.py#L157">this training script</a> by authors)</li>
+</ol>
+<p>Technicalities derived from the <a href="https://github.com/mbaradad/learning_with_noise">code</a>:</p>
+<ul>
+<li>unsupervised part:
+<ul>
+<li>model parameters: TBD</li>
+<li>epochs: 200</li>
+<li>time: TBD</li>
+</ul></li>
+<li>supervised part (training head for classification):
+<ul>
+<li>model parameters: TBD</li>
+<li>epochs: 100</li>
+<li>time: TBD</li>
+</ul></li>
+</ul>
+</section>
+<section id="datasets" class="level3">
+<h3 class="anchored" data-anchor-id="datasets">Datasets</h3>
+<p>See this image of datasets used in this experiment</p>
+<p><img src="examples_of_sythetic_images.png" class="img-fluid"></p>
+</section>
+<section id="results" class="level3">
+<h3 class="anchored" data-anchor-id="results">Results</h3>
+<p><img src="results.png" class="img-fluid"></p>
+<p>Black bars are different baselines and coloured bars represent various sythetic datasets. About 20% is a difference between the best model trained on actual images and best model pre-trained on synthetic images.</p>
+</section>
+<section id="my-conclusions" class="level3">
+<h3 class="anchored" data-anchor-id="my-conclusions">My Conclusions</h3>
+<p>Can this approach democratize access to data, as currently data collection and maintenance is being more and more concentrated? It looks like it, but for now it comes at the cost of performance. However what would be the result if data was generated by Stable Diffussion models?</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
