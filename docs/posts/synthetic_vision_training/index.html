@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2023-01-14">
+<meta name="dcterms.date" content="2023-01-15">
 <meta name="description" content="Not SOTA performance, but quite good">
 
 <title>Michał Pawłowski - Training vision models on synthetic images</title>
@@ -138,7 +138,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">January 14, 2023</p>
+        <p class="date">January 15, 2023</p>
       </div>
     </div>
     
@@ -156,12 +156,11 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p><a href="https://paperswithcode.com/paper/learning-to-see-by-looking-at-noise">Link to the paper (with code)</a></p>
-<p>Thanks to <a href="https://rosanneliu.com/">Rosanne Liu</a> for presenting this paper at <a href="https://mlcollective.org/dlct/">Deep Learning: Classics and Trends</a>.</p>
-<p>Natural images, that we encounter in nature, occupy just a small space out of all possible variations of pixels. Surely training on a pure noise won’t give us anything useful. However if we construct synthetic images that are closer to the real world images, can we train on it with some positive outcomes? Intuitively the answer is yes, but then how well can we train? Unless tagged otherwise, ideas in this blog post come from the paper.</p>
+<p>What if we’ll be able to train vision NN model with <strong>0, nil, nada</strong> real world examples? But we have to train on something, right? Surely training on a pure noise won’t give us anything useful? See CNN-Rand or StyleGAN-Random (both initialized randomly, no training whatsoever) below and you will be surprised! Moreover if we construct synthetic images that are closer to the real world images, can we train on it with some positive outcomes? But then how well can we train? Paper presented below tried to answer that question.</p>
+<p>Unless tagged otherwise, ideas in this blog post come from the <a href="https://paperswithcode.com/paper/learning-to-see-by-looking-at-noise">Learning to See by Looking at Noise</a> paper, <a href="https://www.youtube.com/watch?v=CBqztQ2ZMOM">recorded presentation</a> by Antonio Torralba who is one of the authors and presentation by <a href="https://rosanneliu.com/">Rosanne Liu</a> during <a href="https://mlcollective.org/dlct/">Deep Learning: Classics and Trends</a>.</p>
 <section id="rationale-for-this-exercise" class="level3">
 <h3 class="anchored" data-anchor-id="rationale-for-this-exercise">Rationale for this exercise</h3>
-<p>Models are more and more reliant on data. CLIP need <strong>400 000 000</strong> images to be trained. What if we could build a synthetic dataset to train? Why:</p>
+<p>Models are more and more reliant on data. CLIP need <strong>400 000 000</strong> images to be trained well for example. What if we could build a synthetic dataset to train? Why:</p>
 <ul>
 <li>you don’t have access to data</li>
 <li>cheaper to maintain the data</li>
@@ -176,38 +175,38 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="training-procedure">Training procedure</h3>
 <p>It is done in 2 stages:</p>
 <ol type="1">
-<li>The “base” network is trained using unsupervised contrastive learning (simplifying it is done by comparing similarity of images; <a href="https://arxiv.org/abs/1807.03748v2">details</a>)</li>
+<li>The “base” network is trained using unsupervised contrastive learning (simplifying it is done by identifying if images are the same or come from the same source image with transformations applied; <a href="https://arxiv.org/abs/1807.03748v2">details of the specific approach used in the paper</a>)</li>
 <li>Final layer (but could be layers I think) are trained briefly on actual data to create a head of the model (to me it was not clear reading the paper but see <a href="https://github.com/mbaradad/learning_with_noise/blob/main/align_uniform/linear_eval_imagenet100.py#L157">this training script</a> by authors)</li>
 </ol>
 <p>Technicalities derived from the <a href="https://github.com/mbaradad/learning_with_noise">code</a>:</p>
 <ul>
-<li>unsupervised part:
+<li>unsupervised part (1):
 <ul>
 <li>model parameters: TBD</li>
 <li>epochs: 200</li>
-<li>time: TBD</li>
+<li>time: TBD (most expensive part)</li>
 </ul></li>
-<li>supervised part (training head for classification):
+<li>supervised part (2):
 <ul>
 <li>model parameters: TBD</li>
 <li>epochs: 100</li>
-<li>time: TBD</li>
+<li>time: TBD (but as it is training just single fc layer, this will be cheap)</li>
 </ul></li>
 </ul>
 </section>
 <section id="datasets" class="level3">
 <h3 class="anchored" data-anchor-id="datasets">Datasets</h3>
-<p>See this image of datasets used in this experiment</p>
+<p>See this image of datasets used in this experiment which are referred blow on the benchmark graph.</p>
 <p><img src="examples_of_sythetic_images.png" class="img-fluid"></p>
 </section>
 <section id="results" class="level3">
 <h3 class="anchored" data-anchor-id="results">Results</h3>
 <p><img src="results.png" class="img-fluid"></p>
-<p>Black bars are different baselines and coloured bars represent various sythetic datasets. About 20% is a difference between the best model trained on actual images and best model pre-trained on synthetic images.</p>
+<p>Black bars are different baselines and coloured bars represent various sythetic datasets. About 20% is a difference between the best model trained on actual images and best model pre-trained on synthetic images. The surprising bit is, that randomly initialized networks can give much better than chance results (and random choice is 1% as we have 100 classes): <em>CNN - Rand</em> and <em>StyleGAN - Random</em>. The explanation was, that last fully connected layer will give some performance boost, but <a href="https://youtu.be/CBqztQ2ZMOM?t=1370">Antonio in his video</a> also mentions that even some of those randomly initialized “features must be useful to some degree”. So for example in CNN some of the filters extract information that is then used by linear layer to reason upon.</p>
 </section>
 <section id="my-conclusions" class="level3">
 <h3 class="anchored" data-anchor-id="my-conclusions">My Conclusions</h3>
-<p>Can this approach democratize access to data, as currently data collection and maintenance is being more and more concentrated? It looks like it, but for now it comes at the cost of performance. However what would be the result if data was generated by Stable Diffussion models?</p>
+<p>Can this approach democratize access to data, as currently data collection and maintenance is being more and more concentrated? It looks like it, but for now it comes at the cost of performance. There was also a lot of laughter during the Antonios presentation about Stable Diffusion, so I have to add that: what would be the result if data was generated by SD model?</p>
 
 
 </section>

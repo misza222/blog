@@ -2,7 +2,7 @@
 title: "About me"
 image: ProfilePhoto.jpeg
 about:
-  template: jolla
+  template: solana
   links:
     - icon: github
       text: Github
@@ -16,10 +16,18 @@ about:
 
 ---
 
-Husband, father, Christian, programmer, fascinated with NN.
+Husband, father, Christian, programmer, fascinated with NNs.
 
-I took a sabbatical to explore machine/deep learning but I am OPEN for OFFERS that will lead me into direction of greater enlightement in a field of deep models. Especially interested in do good fields: medicine, pharma, climate etc.
+I took a sabbatical to explore machine/deep learning but I am **open to offers** that will lead me into direction of greater enlightement in a field of Deep Learning. Can be fully *Remote* or in *Warsaw/Poland*.
 
-[Curriculum Vitae](CV_Michal_Pawlowski.pdf){target="_blank"}
+I write this blog mostly for:
 
-All images dreamt by *Stable Diffusion*, but I promise no *ChatGPT* content!
+  - myself to better remember what I learn <sup><sub>(and I have tons of blog posts that I never publish as no time to polish it for other to learn from)</sup></sub>
+  - others to learn from - I often post about stuff that I learn with others <sup><sub>(such as HF RL course topics) - it is easier to convince yourself to write good quality content with that objective in mind :)</sup></sub>
+  - rectuiters/employers - so they can discover what I learn and what I enjoy doing
+
+If you are on a learning path like me, I can'trecommend enough  [writing a blog](https://www.fast.ai/posts/2019-05-13-blogging-advice.html).
+
+If you are interested in my careed so far see [Curriculum Vitae](CV_Michal_Pawlowski.pdf){target="_blank"}
+
+Most images dreamt by *Stable Diffusion*, hosted on [github pages](https://pages.github.com/), rendered with [Quarto](https://quarto.org/docs/websites/website-blog.html) and I promise no *ChatGPT* content here ;)
