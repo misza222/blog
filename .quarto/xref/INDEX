@@ -64,5 +64,11 @@
   },
   "posts/synthetic_vision_training/index.ipynb": {
     "index.html": "3d4ab8df"
+  },
+  "posts/HF_RL_summary/index.qmd": {
+    "index.html": "60eb2c33"
+  },
+  "posts/HF_RL_summary/slides.qmd": {
+    "slides.html": "15e1d411"
   }
 }

@@ -1,0 +1,7 @@
+---
+title: "Huggingface RL Course"
+image: images/hf_logo.webp
+draft: true
+---
+
+[Slides](slides.qmd)

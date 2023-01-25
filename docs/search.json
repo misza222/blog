@@ -61,12 +61,5 @@
     "title": "Technical notes",
     "section": "",
     "text": "Training vision models on synthetic images\n\n\n\n\n\n\n\npaper review\n\n\nvision\n\n\n\n\nNot SOTA performance, but quite good\n\n\n\n\n\n\nJan 15, 2023\n\n\n\n\n\n\n  \n\n\n\n\nWhy use F.cross_entropy?\n\n\n\n\n\n\n\ntraining\n\n\n\n\n… instead of computing it yourself?\n\n\n\n\n\n\nJan 12, 2023\n\n\n\n\n\n\n  \n\n\n\n\nOptuna is hot on Kaggle\n\n\n\n\n\n\n\ntraining\n\n\n\n\nHow to use it with code examples\n\n\n\n\n\n\nDec 22, 2022\n\n\n\n\n\n\n  \n\n\n\n\nHow to read papers?\n\n\n\n\n\n\n\npaper review\n\n\n\n\nGreat advice from Andrew Ng\n\n\n\n\n\n\nDec 8, 2022\n\n\n\n\n\n\n  \n\n\n\n\nMath resources\n\n\n\n\n\n\n\nmath\n\n\n\n\nAll you need to within weeks understand Deep Learning and be reasonably comfortable with papers.\n\n\n\n\n\n\nNov 29, 2022\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About me",
-    "section": "",
-    "text": "Husband, father, Christian, programmer, fascinated with NNs.\nI took a sabbatical to explore machine/deep learning but I am open to offers that will lead me into direction of greater enlightement in a field of Deep Learning. Can be fully Remote or in Warsaw/Poland.\nI write this blog mostly for:\n\nmyself to better remember what I learn (and I have tons of blog posts that I never publish as no time to polish it for other to learn from)\nothers to learn from - I often post about stuff that I learn with others (such as HF RL course topics) - it is easier to convince yourself to write good quality content with that objective in mind :)\nrectuiters/employers - so they can discover what I learn and what I enjoy doing\n\nIf you are on a learning path like me, I can’trecommend enough writing a blog.\nIf you are interested in my careed so far see Curriculum Vitae\nMost images dreamt by Stable Diffusion, hosted on github pages, rendered with Quarto and I promise no ChatGPT content here ;)"
   }
 ]

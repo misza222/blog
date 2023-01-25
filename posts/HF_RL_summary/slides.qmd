@@ -1,0 +1,84 @@
+---
+title: "Huggingface RL Course"
+subtitle: "WIP Summary"
+author: Michał Pawłowski
+draft: true
+format: 
+    revealjs:
+        chalkboard: true
+        email-obfuscation: javascript
+---
+
+## Logistics
+
+- [Homepage](https://huggingface.co/deep-rl-course/unit0/introduction?fw=pt)
+- 10 weeks
+- engaging
+- take anytime
+- great community ^[[discord server](https://discord.gg/ydHrjt3WP5)]
+- theory and practice
+
+::: aside
+External motivators: swag, certificate
+:::
+
+::: (.notes)
+:::
+
+## Rationale and what is RL {.incremental}
+
+* Part of Machine Learning
+* Dream to teach machine to do tasks for us
+* Usage: robotics, games ... ^[RLHF was used to train conversational aspect of ChatGPT]
+
+Definition: *Reinforcement learning is a framework for solving control tasks (also called decision problems) by building agents that learn from the environment by interacting with it through trial and error and receiving rewards (positive or negative) as unique feedback.*
+
+::: (.notes)
+:::
+
+## Types of tasks in RL
+
+* Episodic tasks
+
+* Continuous tasks
+
+::: (.notes)
+Episodic - mario bros
+Continuous - robot serving ppl, stock trading agent
+:::
+
+## What is RL problem?
+
+* reward
+* states
+* actions
+
+::: aside
+Vocab: observation vs state, discreet vs continous actions|states|environment, trajectory, reward discounting
+:::
+
+## Exploration/exploitation tradeoff
+
+## Policy vs. Value based methods
+
+## Q-Learning
+
+Two appraches:
+ - state value function
+ - action value function
+
+## Bellman equation
+
+## Monte-carlo vs. Temporal Difference Learning
+  - MC - learns after completing entire episode
+  - TD - learns after each single action
+
+## Q-Learning algorithm {.smaller .scrollable}
+
+## Deep Q-Learning
+
+## Deep Q-Network (DQN)
+
+## DQN Algorithm
+
+## Policy gradient
