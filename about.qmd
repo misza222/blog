@@ -16,7 +16,7 @@ about:
 
 ---
 
-Husband, father, Christian, programmer, fascinated with NNs.
+Husband, father, Christian, programmer, fascinated with NNs and most recently with Computer Vision, specifically NeRFs.
 
 I took a sabbatical to explore machine/deep learning but I am **open to offers** that will lead me into direction of greater enlightement in a field of Deep Learning. Can be fully *Remote* or in *Warsaw/Poland*.
 
@@ -30,4 +30,4 @@ If you are on a learning path like me, I can'trecommend enough  [writing a blog]
 
 If you are interested in my careed so far see [Curriculum Vitae](CV_Michal_Pawlowski.pdf){target="_blank"}
 
-Most images dreamt by *Stable Diffusion*, hosted on [github pages](https://pages.github.com/), rendered with [Quarto](https://quarto.org/docs/websites/website-blog.html) and I promise no *ChatGPT* content here ;)
+Most images dreamt by *Stable Diffusion* and *DALL·E 3*, hosted on [github pages](https://pages.github.com/), rendered with [Quarto](https://quarto.org/docs/websites/website-blog.html).
