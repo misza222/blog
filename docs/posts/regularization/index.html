@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2023-02-03">
+<meta name="description" content="could be with tinycudann">
 
-<title>Michał Pawłowski - Notes on Deep Q Learning</title>
+<title>Michał Pawłowski - 1000x faster NN training??</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,22 +25,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -60,13 +62,15 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="../styles.css">
-<meta property="og:title" content="Michał Pawłowski - Notes on Deep Q Learning">
-<meta property="og:description" content="by P. Abbeel">
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="Michał Pawłowski - 1000x faster NN training??">
+<meta property="og:description" content="could be with tinycudann">
+<meta property="og:image" content="faster_nn.jpeg">
 <meta property="og:site-name" content="Michał Pawłowski">
-<meta name="twitter:title" content="Michał Pawłowski - Notes on Deep Q Learning">
-<meta name="twitter:description" content="by P. Abbeel">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Michał Pawłowski - 1000x faster NN training??">
+<meta name="twitter:description" content="could be with tinycudann">
+<meta name="twitter:image" content="faster_nn.jpeg">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-fixed fullcontent">
@@ -76,7 +80,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Michał Pawłowski</span>
     </a>
   </div>
@@ -112,15 +116,28 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Notes on Deep Q Learning</h1>
-            <p class="subtitle lead">by P. Abbeel</p>
-                      </div>
+      <h1 class="title">1000x faster NN training??</h1>
+                  <div>
+        <div class="description">
+          could be with tinycudann
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">training</div>
+              </div>
+                  </div>
   </div>
     
   
   <div class="quarto-title-meta">
 
       
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">February 3, 2023</p>
+      </div>
+    </div>
     
       
     </div>
@@ -136,31 +153,8 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="wip-notes-on-deep-q-learning" class="level1">
-<h1>WIP: Notes on Deep Q Learning</h1>
-<p>Based on <a href="https://www.youtube.com/playlist?list=PLwRJQ4m4UJjNymuBM9RdmB3Z9N5-0IlY0">Pieter Abbeel lectures</a></p>
-<p>General rule: Sampling as a way to esitmate true (definitive) values in the infinite world of possibilities. So we don’t get an erratic behaviour we introduce α (learning rate) to gradually update our estimates.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="deep_q_learning_files/figure-html/1c67b430-2-image.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Sampling for efficiency</figcaption><p></p>
-</figure>
-</div>
-<p>Greedy and ε-Greedy approaches to environment exploration</p>
-<p>Q-learning converges to optimal policy. This even though we don’t take optimal actions during training, but this exactly allows us to explore environment better than with Greedy approach. This is given you need to give algorithm enough time based on a state and action space of the environment. There are also technicalities that need to be considered - change ε during training, so first we explore more, and as we approach convergence we focus more on tried and working paths.</p>
-<p>Vocab: - actuators (that take actions) and actuate as a verb - temporar limitation - information that can only be learned with time (as in Atari games, speed can only be observed if we have at least 2 frames stacked together) -</p>
-<p>Still, Q function based on tables is not possible for larger enviroments, so we need to exitmate (or compress) that with something else - here NN comes in handy with it’s gradient based optimization methods. It is called Deep Q-Networks (DQN).</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="deep_q_learning_files/figure-html/1c67b430-1-image-2.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Parametrized Q Function</figcaption><p></p>
-</figure>
-</div>
-<p>Turns out that Deep Q-Learning is quite efficient, but not best in terms of stability.</p>
-<p>Other options:</p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

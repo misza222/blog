@@ -14,6 +14,13 @@
     "text": "Andrew Ng gave an career advice lecture at Stanford in 2019 where he also mentioned how to read academic papers.\nRead it taking multiple passes through the paper:\n\nTitle + Abstract + Figures\nIntro + Conclusions + Figures + Skim rest\nRead text but skip math\nRead all of it but skip what doesn’t make sense\n\nwhich boils down to:\nGo from efficient and high information content first and dig into the harder bits gradually\nSome of the questions to keep in mind during the process (and to decide whether to go to the next step):\n\nWhat did authors try to acomplish?\nWhat are the key elements of the approach?\nWhat can you use yourself?\nWhat other references do you want to follow?\n\nIt is worth watching, as it also sumarizes the process of creating and reviewing the paper to give rationale for that process."
   },
   {
+    "objectID": "posts/ak_playlist/index.html",
+    "href": "posts/ak_playlist/index.html",
+    "title": "Michał Pawłowski",
+    "section": "",
+    "text": "from IPython.display import IFrame\nIFrame('https://www.youtube.com/embed/videoseries?si=fzJ6AaBxySFQtgtS&amp;list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ', title=\"YouTube video player\", frameborder=\"0\", allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\", width=700, height=350)"
+  },
+  {
     "objectID": "posts/synthetic_vision_training/index.html",
     "href": "posts/synthetic_vision_training/index.html",
     "title": "Training vision models on synthetic images",
@@ -33,6 +40,13 @@
     "title": "Math resources",
     "section": "",
     "text": "My Uni days are long gone, I was reasonably good at math, but over the years of not using it, I almost feel like the knowledge was never there.\nHere is my journey through the process of remembering some math that I need to feel more comfortable with for the basics of deep learning and to be able to digest papers in the broad area of deep learning research.\nAdvice to my former self: First read some papers, struggle through them, let the frustration build up so you have a motivation to learn + you will also build an intuition of what tools you may actually need!\nAs for the resouces, I started with Deep Learninig book few years ago, but got discouraged by the theory and I didn’t have enough practice to know that it will be useful some day.\nRecently I found out that there is a growing comunity of people around that book led by Sanyam Buthani. Apart from the community and help + motivation to learn that comes with it, there are number of resources for self study, such as notebooks with all the concepts translated into code, which makes it so much more practical.\nStaying around the same book, there are great lectures going through each chapter of that book.\nIf you want to learn more about torch.autograd, frameworks that do automatic differentiation in general and understand calculus that is the engine of deep learning machine there is an excelent The Matrix Calculus You Need For Deep Learning.\nAnother interesting resources are Mathematics for Machine Learning and short lectures covering pretty much all you need for the topic in a very accessible, visual and short form.\nLast but not least, Andrew Ng’s advice on how to read a paper which I also sumarize here!\nAll these resources are freely available online."
+  },
+  {
+    "objectID": "posts/nerf_basics/index.html",
+    "href": "posts/nerf_basics/index.html",
+    "title": "NeRF basics",
+    "section": "",
+    "text": "This is a companion blog post for my presentation given at Data Science Summit 2023 in Warsaw.\nThe presentation itself is on google docs"
   },
   {
     "objectID": "posts/f_cross_entropy/index.html",
@@ -60,6 +74,6 @@
     "href": "index.html",
     "title": "Technical notes",
     "section": "",
-    "text": "Training vision models on synthetic images\n\n\n\n\n\n\n\npaper review\n\n\nvision\n\n\n\n\nNot SOTA performance, but quite good\n\n\n\n\n\n\nJan 15, 2023\n\n\n\n\n\n\n  \n\n\n\n\nWhy use F.cross_entropy?\n\n\n\n\n\n\n\ntraining\n\n\n\n\n… instead of computing it yourself?\n\n\n\n\n\n\nJan 12, 2023\n\n\n\n\n\n\n  \n\n\n\n\nOptuna is hot on Kaggle\n\n\n\n\n\n\n\ntraining\n\n\n\n\nHow to use it with code examples\n\n\n\n\n\n\nDec 22, 2022\n\n\n\n\n\n\n  \n\n\n\n\nHow to read papers?\n\n\n\n\n\n\n\npaper review\n\n\n\n\nGreat advice from Andrew Ng\n\n\n\n\n\n\nDec 8, 2022\n\n\n\n\n\n\n  \n\n\n\n\nMath resources\n\n\n\n\n\n\n\nmath\n\n\n\n\nAll you need to within weeks understand Deep Learning and be reasonably comfortable with papers.\n\n\n\n\n\n\nNov 29, 2022\n\n\n\n\n\n\nNo matching items"
+    "text": "NeRF basics\n\n\n\n\n\n\n\nnerf\n\n\n\n\ncompanion post for DSS 2023 conference\n\n\n\n\n\n\nNov 22, 2023\n\n\n\n\n\n\n  \n\n\n\n\nTraining vision models on synthetic images\n\n\n\n\n\n\n\npaper review\n\n\nvision\n\n\n\n\nNot SOTA performance, but quite good\n\n\n\n\n\n\nJan 15, 2023\n\n\n\n\n\n\n  \n\n\n\n\nWhy use F.cross_entropy?\n\n\n\n\n\n\n\ntraining\n\n\n\n\n… instead of computing it yourself?\n\n\n\n\n\n\nJan 12, 2023\n\n\n\n\n\n\n  \n\n\n\n\nOptuna is hot on Kaggle\n\n\n\n\n\n\n\ntraining\n\n\n\n\nHow to use it with code examples\n\n\n\n\n\n\nDec 22, 2022\n\n\n\n\n\n\n  \n\n\n\n\nHow to read papers?\n\n\n\n\n\n\n\npaper review\n\n\n\n\nGreat advice from Andrew Ng\n\n\n\n\n\n\nDec 8, 2022\n\n\n\n\n\n\n  \n\n\n\n\nMath resources\n\n\n\n\n\n\n\nmath\n\n\n\n\nAll you need to within weeks understand Deep Learning and be reasonably comfortable with papers.\n\n\n\n\n\n\nNov 29, 2022\n\n\n\n\n\n\nNo matching items"
   }
 ]
