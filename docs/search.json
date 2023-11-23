@@ -46,7 +46,7 @@
     "href": "posts/nerf_basics/index.html",
     "title": "NeRF basics",
     "section": "",
-    "text": "This is a companion blog post for my presentation given at Data Science Summit 2023 in Warsaw.\nThe presentation itself is on google docs"
+    "text": "This is a companion blog post for my presentation given at Data Science Summit 2023 in Warsaw.\nThe presentation itself is on google docs \n\n\nRight now I have not much to add to the presentation. But make sure to check out extensive speaker notes there.\nBelow is the dozer that I used as a training data for nerf.studio that is rendered here with poly.cam and lumalabs.ai"
   },
   {
     "objectID": "posts/f_cross_entropy/index.html",

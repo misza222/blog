@@ -82,3 +82,11 @@ Two appraches:
 ## DQN Algorithm
 
 ## Policy gradient
+
+## Multi-agent RL
+
+Where multiple agents act in the environment. 2 major types if environments:
+ - cooperative
+ - adversarial (competitive)
+ - mix of both
+

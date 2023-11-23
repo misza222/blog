@@ -70,5 +70,14 @@
   },
   "posts/HF_RL_summary/slides.qmd": {
     "slides.html": "15e1d411"
+  },
+  "posts/ak_playlist/index.ipynb": {
+    "index.html": "33c9c30f"
+  },
+  "posts/regularization/index.ipynb": {
+    "index.html": "41faa2a7"
+  },
+  "posts/nerf_basics/index.ipynb": {
+    "index.html": "a14b2e38"
   }
 }
